@@ -7,7 +7,8 @@ export default class ToDo extends Model {
     return {
       id: this.uid(),
       title: this.attr(""),
-      content: this.attr(""),
+      description: this.attr(""),
+      finished: this.boolean(false),
       userId: this.attr(null),
     };
   }
