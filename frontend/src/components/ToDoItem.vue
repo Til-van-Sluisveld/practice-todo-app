@@ -17,7 +17,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
 // eslint-disable-next-line no-unused-vars
-import ToDo from "@/store/models/todo";
+import ToDo from "../store/models/todo";
 
 @Component
 export default class ToDoItem extends Vue {
