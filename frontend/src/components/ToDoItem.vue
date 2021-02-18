@@ -1,7 +1,11 @@
 <template>
   <v-list-item>
     <v-list-item-action>
-      <v-checkbox v-model="value.finished" color="success"></v-checkbox>
+      <v-checkbox
+        v-model="value.finished"
+        color="success"
+        @change="updateFinished"
+      ></v-checkbox>
     </v-list-item-action>
     <v-list-item-content>
       <v-list-item-title>{{ value.title }}</v-list-item-title>
@@ -19,5 +23,17 @@ import ToDo from "@/store/models/todo";
 export default class ToDoItem extends Vue {
   @Prop(Object)
   value: ToDo | undefined;
+
+  updateFinished(e: boolean) {
+    // console.log(this.value?.$id);
+    // console.log(e);
+
+    ToDo.update({
+      where: this.value?.$id,
+      data: {
+        finished: e,
+      },
+    });
+  }
 }
 </script>
