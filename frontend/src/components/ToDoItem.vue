@@ -25,15 +25,15 @@ export default class ToDoItem extends Vue {
   value: ToDo | undefined;
 
   updateFinished(e: boolean) {
-    // console.log(this.value?.$id);
-    // console.log(e);
-
-    ToDo.update({
-      where: this.value?.$id,
-      data: {
-        finished: e,
-      },
-    });
+    console.log(this.value);
+    console.log(e);
+    // FIX - this.value.id is not recognized
+    // ToDo.update({
+    //   where: this.value.id,
+    //   data: {
+    //     finished: e,
+    //   },
+    // });
   }
 }
 </script>
